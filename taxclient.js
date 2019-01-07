@@ -159,7 +159,7 @@ module.exports = function(server, db_config){
 	})
 
 	server.post("/SerchComments/",(req, res,next) =>{
-		var query = "select distinct comments from clientcomments limit 10;"
+		var query = "select distinct comments from clientcomments limit 500;"
 		conectionDB();
 
 		cnn.query(query,[req.body.strComment],function	(err,result,fields){
