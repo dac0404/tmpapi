@@ -28,14 +28,15 @@ server.post('/sendingsms/',(req, res, next)=>{
             from: wFrom,
             body: wSms
         });
-        else{
-            smsclient.messages.create({
-                to: wTo,
-                from: wFrom,
-                body: wSms,
-                mediaUrl: wUrlMMS
-            });
-        }
+
+    }
+    else{
+        smsclient.messages.create({
+            to: wTo,
+            from: wFrom,
+            body: wSms,
+            mediaUrl: wUrlMMS
+        });
     }
     
     //.then((err, message) => console.log(err));
